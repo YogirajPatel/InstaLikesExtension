@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   var toggleButton = document.getElementById("toggleButton");
 
-  
   chrome.storage.local.get("extensionEnabled", function (data) {
     if (data.extensionEnabled === undefined || data.extensionEnabled) {
       toggleButton.innerText = "Disable Extension";
@@ -61,6 +60,24 @@ function hideClass() {
         for (const element of newElements) {
           element.style.display = "none";
         }
+        const newElements2 = document.getElementsByClassName("_ac2a");
+        for (const element of newElements2) {
+          element.style.display = "none";
+        }
+        const newElements3 = document.getElementsByClassName("xieb3on");
+        for (const element of newElements3) {
+          element.style.display = "none";
+        }
+        const newElements4 = document.getElementsByClassName("_aa_c");
+        for (const element of newElements4) {
+          element.style.display = "none";
+        }
+
+        const newElements6 = document.getElementsByClassName("xrvj5dj");
+        for (const element of newElements6) {
+          element.style.display = "none";
+          element.style.cursor = "";
+        }
       }
     }
   });
@@ -76,6 +93,24 @@ function hideClass() {
   for (const element of existingElements) {
     element.style.display = "none";
   }
+  const existingElements2 = document.getElementsByClassName("_ac2a");
+  for (const element of existingElements2) {
+    element.style.display = "none";
+  }
+  const existingElements3 = document.getElementsByClassName("xieb3on");
+  for (const element of existingElements3) {
+    element.style.display = "none";
+  }
+  const existingElements4 = document.getElementsByClassName("_aa_c");
+  for (const element of existingElements4) {
+    element.style.display = "none";
+  }
+
+  const existingElements6 = document.getElementsByClassName("xrvj5dj");
+  for (const element of existingElements6) {
+    element.style.pointerEvents = "none";
+    element.style.cursor = "";
+  }
 }
 
 function showClass() {
@@ -87,9 +122,26 @@ function showClass() {
   for (const element of existingElements) {
     element.style.display = "";
   }
+  const existingElements2 = document.getElementsByClassName("_ac2a");
+  for (const element of existingElements2) {
+    element.style.display = "";
+  }
+  const existingElements3 = document.getElementsByClassName("xieb3on");
+  for (const element of existingElements3) {
+    element.style.display = "";
+  }
+  const existingElements4 = document.getElementsByClassName("_aa_c");
+  for (const element of existingElements4) {
+    element.style.display = "";
+  }
+
+  const existingElements6 = document.getElementsByClassName("xrvj5dj");
+  for (const element of existingElements6) {
+    element.style.display = "";
+    element.style.cursor = "";
+  }
 }
 
-// Automatically apply extension functionality when the tab is updated or refreshed
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   chrome.storage.local.get("extensionEnabled", function (data) {
     if (data.extensionEnabled) {
