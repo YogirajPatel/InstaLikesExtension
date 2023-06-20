@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Instagram Class Hider",
+    "version": "1.0",
+    "permissions": ["scripting", "storage", "tabs"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "host_permissions": ["https://www.instagram.com/"],
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
+  
